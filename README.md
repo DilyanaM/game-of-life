@@ -23,5 +23,5 @@ ng build
 ```
 The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-Resources:
+### Resources:
 - [Angular CLI](https://github.com/angular/angular-cli) v8.3.9
