@@ -18,8 +18,6 @@ ng serve -o
 This will run the dev server and open the app at [http://localhost:4200](http://localhost:4200) in the browser.
 
 ## Build the project
-
-In project directory run:
 ```
 ng build
 ```
