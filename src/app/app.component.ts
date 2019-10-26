@@ -7,6 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title: string = 'Game of Life';
+  toggleButtonText: string = 'START';
+
+  getGameStatus = (status) => {
+    this.toggleButtonText = status;
+  }
 
   // rows: number = 20;
   // cols: number = 50;

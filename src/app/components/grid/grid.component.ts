@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-grid',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./grid.component.css']
 })
 export class GridComponent implements OnInit {
+  @Output() isPlaying = new EventEmitter();
 
   rows: number = 20;
   cols: number = 50;
@@ -117,9 +118,16 @@ export class GridComponent implements OnInit {
     this.replaceGenerationAndResetGrid();
   }
 
-  startGame = () => {
-    this.playing = true;
-    this.play();
+  toggleGame = () => {
+    if (this.playing) {
+      this.playing = false;
+      this.isPlaying.emit('START');
+      clearTimeout(this.timer);
+    } else {
+      this.playing = true;
+      this.isPlaying.emit('PAUSE');
+      this.play();
+    }
   }
 
   play = () => {

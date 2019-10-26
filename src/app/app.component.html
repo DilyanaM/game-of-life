@@ -1,6 +1,8 @@
 <div className="app">
-  <button (click)="gameGrid.startGame()">START</button>
-  <app-grid #gameGrid></app-grid>
+  <button (click)="gameGrid.toggleGame()">
+    {{ toggleButtonText }}
+  </button>
+  <app-grid #gameGrid (isPlaying)="getGameStatus($event)"></app-grid>
 </div>
 
 <router-outlet></router-outlet>
