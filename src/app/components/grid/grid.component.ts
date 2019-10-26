@@ -118,23 +118,21 @@ export class GridComponent implements OnInit {
     this.replaceGenerationAndResetGrid();
   }
 
-  toggleGame = () => {
-    if (this.playing) {
-      this.playing = false;
-      this.isPlaying.emit('START');
-      clearTimeout(this.timer);
-    } else {
-      this.playing = true;
-      this.isPlaying.emit('PAUSE');
-      this.play();
-    }
+  play = () => {
+    this.playing = true;
+    this.isPlaying.emit('PAUSE');
+    this.computeNextGeneration();
+    this.timer = setTimeout(this.play, this.reproductionTime);
   }
 
-  play = () => {
-    this.computeNextGeneration();
-    if (this.playing) {
-      this.timer = setTimeout(this.play, this.reproductionTime);
-    }
+  pause = () => {
+    this.playing = false;
+    this.isPlaying.emit('START');
+    clearTimeout(this.timer);
+  }
+
+  toggleGame = () => {
+    this.playing ? this.pause() : this.play();
   }
 
 }
