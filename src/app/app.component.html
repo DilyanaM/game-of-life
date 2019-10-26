@@ -1,9 +1,10 @@
 <div className="app">
   <button (click)="initialize()">START</button>
 
-  <div *ngFor="let row of currentGeneration" class="row">
+  <app-grid></app-grid>
+  <!-- <div *ngFor="let row of currentGeneration" class="row">
     <div *ngFor="let col of row" [ngClass]="col === 1 ? 'blue' : 'red'"></div>
-  </div>
+  </div> -->
 </div>
 
 <router-outlet></router-outlet>

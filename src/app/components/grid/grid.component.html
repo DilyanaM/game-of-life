@@ -1,0 +1,8 @@
+<div *ngFor="let row of currentGeneration" class="row">
+  <div
+    *ngFor="let col of row"
+    [ngClass]="col === 1 ? 'alive' : 'dead'"
+    class="cell"
+  >
+  </div>
+</div>
