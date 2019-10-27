@@ -6,16 +6,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
-import { GridComponent } from './components/grid/grid.component';
+import { HeaderComponent } from './components/layout/header/header.component';
+import { FooterComponent } from './components/layout/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { GameComponent } from './components/game/game.component';
+import { GridComponent } from './components/grid/grid.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    GridComponent,
+    HeaderComponent,
+    FooterComponent,
     HomeComponent,
-    GameComponent
+    GameComponent,
+    GridComponent,
   ],
   imports: [
     BrowserModule,
