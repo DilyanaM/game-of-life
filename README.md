@@ -26,3 +26,4 @@ The build artifacts will be stored in the `dist/` directory. Use the `--prod` fl
 
 ## Resources:
 - [Angular CLI](https://github.com/angular/angular-cli) v8.3.9
+- [Bootstrap](https://getbootstrap.com/) v4.3.1
