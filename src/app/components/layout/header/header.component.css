@@ -5,7 +5,6 @@
   padding: 7px 14px;
 }
 
-.nav-item:hover,
-.nav-item:focus {
+.nav-item:hover {
   border: 1px solid var(--light);
 }

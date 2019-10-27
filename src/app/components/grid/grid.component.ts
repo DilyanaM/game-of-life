@@ -85,15 +85,17 @@ export class GridComponent implements OnInit {
   }
 
   applyRules = (row: number, col: number) => {
-    let aliveNeihgbours = this.countAliveNeighbours(row, col);
+    const aliveNeihgbours = this.countAliveNeighbours(row, col);
+    const isAlive = this.currentGeneration[row][col] === 1;
+    const isDead = this.currentGeneration[row][col] === 0;
 
-    if (this.currentGeneration[row][col] === 1) {
+    if (isAlive) {
       if (aliveNeihgbours < 2 || aliveNeihgbours > 3) {
         this.nextGeneration[row][col] = 0;
       } else if (aliveNeihgbours === 2 || aliveNeihgbours === 3) {
         this.nextGeneration[row][col] = 1;
       }
-    } else if (this.currentGeneration[row][col] === 0) {
+    } else if (isDead) {
       if (aliveNeihgbours === 3) {
         this.nextGeneration[row][col] = 1;
       }
