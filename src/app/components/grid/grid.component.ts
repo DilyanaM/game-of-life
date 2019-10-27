@@ -133,6 +133,11 @@ export class GridComponent implements OnInit {
     clearTimeout(this.timer);
   }
 
+  reset = () => {
+    this.pause();
+    this.setupCells();
+  }
+
   toggleGame = () => {
     this.playing ? this.pause() : this.play();
   }
