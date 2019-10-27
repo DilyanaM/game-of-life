@@ -19,10 +19,12 @@ ng serve -o
 This will run the dev server and open the app at [http://localhost:4200](http://localhost:4200) in the browser.
 
 ## Build the project
+The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 ```
 ng build
 ```
-The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+
+## Run the production build
 You can easily serve the built application in your browser by installing [angular-http-server](https://www.npmjs.com/package/angular-http-server) and running the following command in `dist/game-of-life/` directory:
 ```
 angular-http-server -o
