@@ -1,3 +1,7 @@
 .year {
   color: var(--light);
 }
+
+.footer-nav-item {
+  color: var(--light);
+}

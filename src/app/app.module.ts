@@ -9,6 +9,7 @@ import { FooterComponent } from './components/layout/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { GameComponent } from './components/game/game.component';
 import { GridComponent } from './components/grid/grid.component';
+import { RulesComponent } from './components/rules/rules.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { GridComponent } from './components/grid/grid.component';
     HomeComponent,
     GameComponent,
     GridComponent,
+    RulesComponent,
   ],
   imports: [
     BrowserModule,

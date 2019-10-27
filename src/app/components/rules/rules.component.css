@@ -1,0 +1,15 @@
+.rules {
+  height: 100%;
+}
+
+.rules .separator {
+  width: 90%;
+  height: 1px;
+  background: black;
+  margin: 20px auto 35px;
+}
+
+.rule-text {
+  font-weight: 500;
+  margin: 10px 0;
+}

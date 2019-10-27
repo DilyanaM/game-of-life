@@ -1,11 +1,11 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-grid',
   templateUrl: './grid.component.html',
   styleUrls: ['./grid.component.css']
 })
-export class GridComponent implements OnInit {
+export class GridComponent implements OnInit, OnDestroy {
   @Output() isPlaying = new EventEmitter();
 
   rows: number = 20;
@@ -140,6 +140,10 @@ export class GridComponent implements OnInit {
 
   toggleGame = () => {
     this.playing ? this.pause() : this.play();
+  }
+
+  ngOnDestroy() {
+    this.pause();
   }
 
 }
