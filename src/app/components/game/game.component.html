@@ -1,0 +1,6 @@
+<div className="game">
+  <button (click)="gameGrid.toggleGame()">
+    {{ toggleButtonText }}
+  </button>
+  <app-grid #gameGrid (isPlaying)="getGameStatus($event)"></app-grid>
+</div>

@@ -8,10 +8,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
   title: string = 'Game of Life';
-  toggleButtonText: string = 'START';
-
-  getGameStatus = (status) => {
-    this.toggleButtonText = status;
-  }
 
 }
