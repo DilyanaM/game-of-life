@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class GameComponent {
 
-  toggleButtonText: string = 'START';
+  toggleButtonText: string = 'Start';
 
   getGameStatus = (status: string) => {
     this.toggleButtonText = status;

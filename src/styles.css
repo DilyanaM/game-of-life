@@ -6,7 +6,12 @@
   font-weight: 300;
 }
 
-a {
+body {
+  height: 100vh;
+}
+
+a,
+.btn {
   transition: all .3s ease-in;
 }
 
@@ -15,6 +20,10 @@ a:focus {
   text-decoration: none;
 }
 
-body {
-  height: 100vh;
+.jumbotron {
+  margin-bottom: 0;
+}
+
+.btn {
+  min-width: 100px;
 }

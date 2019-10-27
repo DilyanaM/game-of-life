@@ -1,6 +1,18 @@
-<div className="game">
-  <button (click)="gameGrid.toggleGame()">
-    {{ toggleButtonText }}
-  </button>
-  <app-grid #gameGrid (isPlaying)="getGameStatus($event)"></app-grid>
+<div class="game d-flex justify-content-center align-items-center">
+  <div class="jumbotron container d-flex justify-content-center align-items-center flex-column">
+    <div class="game-buttons">
+      <button
+        (click)="gameGrid.toggleGame()"
+        class="start-btn btn btn-primary btn-lg mb-5"
+      >
+        {{ toggleButtonText }}
+      </button>
+      <button
+        class="reset-btn btn btn-danger btn-lg mb-5"
+      >
+        Reset
+      </button>
+    </div>
+    <app-grid #gameGrid (isPlaying)="getGameStatus($event)"></app-grid>
+  </div>
 </div>

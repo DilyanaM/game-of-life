@@ -120,14 +120,14 @@ export class GridComponent implements OnInit {
 
   play = () => {
     this.playing = true;
-    this.isPlaying.emit('PAUSE');
+    this.isPlaying.emit('Pause');
     this.computeNextGeneration();
     this.timer = setTimeout(this.play, this.reproductionTime);
   }
 
   pause = () => {
     this.playing = false;
-    this.isPlaying.emit('START');
+    this.isPlaying.emit('Start');
     clearTimeout(this.timer);
   }
 
