@@ -1,5 +1,5 @@
 <div class="grid container">
-  <div *ngFor="let row of currentGeneration" class="row">
+  <div *ngFor="let row of currentGeneration" class="grid-row">
     <div
       *ngFor="let col of row"
       [ngClass]="col === 1 ? 'alive' : 'dead'"
