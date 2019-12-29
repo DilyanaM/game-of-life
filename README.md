@@ -31,5 +31,5 @@ angular-http-server -o
 ```
 
 ## Resources:
-- [Angular CLI](https://github.com/angular/angular-cli) v8.3.9
-- [Bootstrap](https://getbootstrap.com/) v4.3.1
+- [Angular CLI](https://github.com/angular/angular-cli)
+- [Bootstrap](https://getbootstrap.com/)
