@@ -8,9 +8,9 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it(`should display title 'Conway\'s Game of Life'`, () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('game-of-life app is running!');
+    expect(page.getTitleText()).toEqual('Conway\'s Game of Life');
   });
 
   afterEach(async () => {
