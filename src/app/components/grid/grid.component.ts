@@ -1,10 +1,11 @@
 import { Component, OnInit, Output, EventEmitter, OnDestroy } from '@angular/core';
+import { NgFor, NgClass } from '@angular/common';
 
 @Component({
     selector: 'app-grid',
     templateUrl: './grid.component.html',
     styleUrls: ['./grid.component.css'],
-    standalone: false
+    imports: [NgFor, NgClass]
 })
 export class GridComponent implements OnInit, OnDestroy {
   @Output() isPlaying = new EventEmitter();
