@@ -112,6 +112,9 @@
           }
         }
       }
-    }},
-  "defaultProject": "game-of-life"
+    }
+  },
+  "cli": {
+    "analytics": false
+  }
 }
