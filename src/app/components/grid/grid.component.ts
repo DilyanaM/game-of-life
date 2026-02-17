@@ -1,9 +1,10 @@
 import { Component, OnInit, Output, EventEmitter, OnDestroy } from '@angular/core';
 
 @Component({
-  selector: 'app-grid',
-  templateUrl: './grid.component.html',
-  styleUrls: ['./grid.component.css']
+    selector: 'app-grid',
+    templateUrl: './grid.component.html',
+    styleUrls: ['./grid.component.css'],
+    standalone: false
 })
 export class GridComponent implements OnInit, OnDestroy {
   @Output() isPlaying = new EventEmitter();
