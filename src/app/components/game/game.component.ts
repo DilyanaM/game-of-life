@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
+import { GridComponent } from '../grid/grid.component';
 
 @Component({
     selector: 'app-game',
     templateUrl: './game.component.html',
     styleUrls: ['./game.component.css'],
-    standalone: false
+    imports: [
+      GridComponent
+    ]
 })
 export class GameComponent {
 

@@ -8,12 +8,10 @@ describe('AppComponent', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
-      ],
-      declarations: [
-        AppComponent,
+        RouterTestingModule,
         HeaderComponent,
-        FooterComponent
+        FooterComponent,
+        AppComponent
       ],
     }).compileComponents();
   }));
@@ -29,5 +27,4 @@ describe('AppComponent', () => {
     const app = fixture.debugElement.componentInstance;
     expect(app.title).toEqual('Game of Life');
   });
-
 });

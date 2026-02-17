@@ -9,9 +9,9 @@ describe('GameComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [
+      imports: [
         GameComponent,
-        GridComponent
+        GridComponent,
       ]
     }).compileComponents();
   }));
