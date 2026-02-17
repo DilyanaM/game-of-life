@@ -68,18 +68,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "game-of-life:build"
+            "buildTarget": "game-of-life:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "game-of-life:build:production"
+              "buildTarget": "game-of-life:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "game-of-life:build"
+            "buildTarget": "game-of-life:build"
           }
         },
         "test": {
