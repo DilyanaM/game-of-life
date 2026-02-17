@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
-import { NgFor } from '@angular/common';
 
 @Component({
     selector: 'app-rules',
     templateUrl: './rules.component.html',
     styleUrls: ['./rules.component.css'],
-    imports: [NgFor]
 })
 export class RulesComponent {
 

@@ -1,10 +1,13 @@
 <div class="grid container">
-  <div *ngFor="let row of currentGeneration" class="grid-row">
-    <div
-      *ngFor="let col of row"
-      [ngClass]="col === 1 ? 'alive' : 'dead'"
-      class="cell"
-    >
+  @for (row of currentGeneration; track row) {
+    <div class="grid-row">
+      @for (col of row; track $index) {
+        <div
+          [ngClass]="col === 1 ? 'alive' : 'dead'"
+          class="cell"
+          >
+        </div>
+      }
     </div>
-  </div>
+  }
 </div>
