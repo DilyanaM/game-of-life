@@ -11,7 +11,7 @@ import { GridComponent } from '../grid/grid.component';
 })
 export class GameComponent {
 
-  toggleButtonText: string = 'Start';
+  toggleButtonText = 'Start';
 
   getGameStatus = (status: string) => {
     this.toggleButtonText = status;
