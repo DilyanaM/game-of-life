@@ -16,7 +16,7 @@ export class GridComponent implements OnInit, OnDestroy {
   nextGeneration = new Array<number[]>(this.rows);
 
   playing = false;
-  timer: NodeJS.Timeout;
+  timer;
   reproductionTime = 100;
 
   ngOnInit() {
