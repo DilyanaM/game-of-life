@@ -10,14 +10,14 @@ import { NgClass } from '@angular/common';
 export class GridComponent implements OnInit, OnDestroy {
   @Output() isPlaying = new EventEmitter();
 
-  rows: number = 20;
-  cols: number = 50;
-  currentGeneration: Array<number[]> = new Array(this.rows);
-  nextGeneration: Array<number[]> = new Array(this.rows);
+  rows = 20;
+  cols = 50;
+  currentGeneration = new Array<number[]>(this.rows);
+  nextGeneration = new Array<number[]>(this.rows);
 
-  playing: boolean = false;
-  timer;
-  reproductionTime: number = 100;
+  playing = false;
+  timer: NodeJS.Timeout;
+  reproductionTime = 100;
 
   ngOnInit() {
     this.initializeGrid();
@@ -34,7 +34,7 @@ export class GridComponent implements OnInit, OnDestroy {
   setupCells = () => {
     for (let i = 0; i < this.rows; i++) {
       for (let j = 0; j < this.cols; j++) {
-        let isAlive = Math.round(Math.random());
+        const isAlive = Math.round(Math.random());
         if (isAlive === 1) {
           this.currentGeneration[i][j] = 1;
         } else {
@@ -141,7 +141,11 @@ export class GridComponent implements OnInit, OnDestroy {
   }
 
   toggleGame = () => {
-    this.playing ? this.pause() : this.play();
+    if (this.playing) {
+      this.pause();
+    } else {
+      this.play();
+    }
   }
 
   ngOnDestroy() {

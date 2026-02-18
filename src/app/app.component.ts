@@ -15,6 +15,6 @@ import { FooterComponent } from './components/layout/footer/footer.component';
 })
 export class AppComponent {
 
-  title: string = 'Game of Life';
+  title = 'Game of Life';
 
 }
