@@ -16,7 +16,6 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '24'
-          cache: 'npm'
       - run: npm install
       - run: npm run lint
   
@@ -29,6 +28,5 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '24'
-          cache: 'npm'
       - run: npm install
       - run: npm run test -- --watch=false --browsers=ChromeHeadlessCI
