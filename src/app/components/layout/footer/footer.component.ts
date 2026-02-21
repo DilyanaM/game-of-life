@@ -6,7 +6,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.css'],
   imports: [
-    RouterLink, 
+    RouterLink,
     RouterLinkActive,
   ],
 })
