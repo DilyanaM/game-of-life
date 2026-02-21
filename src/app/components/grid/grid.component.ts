@@ -1,12 +1,14 @@
 import { Component, OnInit, Output, EventEmitter, OnDestroy } from '@angular/core';
 import { NgClass } from '@angular/common';
-import { GRID_BUTTONS, GRID_DIMENSIONS, REPRODUCTION_TIME } from './grid-settings';
+import { GRID_BUTTONS, GRID_DIMENSIONS, REPRODUCTION_TIME } from '../../models/grid/grid-settings';
 
 @Component({
-    selector: 'app-grid',
-    templateUrl: './grid.component.html',
-    styleUrls: ['./grid.component.css'],
-    imports: [NgClass]
+  selector: 'app-grid',
+  templateUrl: './grid.component.html',
+  styleUrls: ['./grid.component.css'],
+  imports: [
+    NgClass,
+  ],
 })
 export class GridComponent implements OnInit, OnDestroy {
   @Output() isPlaying = new EventEmitter<string>();
