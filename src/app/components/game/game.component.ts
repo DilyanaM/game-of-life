@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { GridComponent } from '../grid/grid.component';
+import { GRID_BUTTONS } from '../grid/grid-settings';
 
 @Component({
     selector: 'app-game',
@@ -10,11 +11,10 @@ import { GridComponent } from '../grid/grid.component';
     ]
 })
 export class GameComponent {
+  protected startPauseButtonText = GRID_BUTTONS.start;
+  protected resetButtonText = GRID_BUTTONS.reset;
 
-  toggleButtonText = 'Start';
-
-  getGameStatus = (status: string) => {
-    this.toggleButtonText = status;
+  protected setGameStatus(status: GRID_BUTTONS): void {
+    this.startPauseButtonText = status;
   }
-
 }

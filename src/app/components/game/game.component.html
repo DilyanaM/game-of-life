@@ -5,15 +5,15 @@
         (click)="gameGrid.toggleGame()"
         class="start-btn btn btn-primary btn-lg mb-5"
       >
-        {{ toggleButtonText }}
+        {{ startPauseButtonText }}
       </button>
       <button
         (click)="gameGrid.reset()"
         class="reset-btn btn btn-danger btn-lg mb-5"
       >
-        Reset
+        {{ resetButtonText }}
       </button>
     </div>
-    <app-grid #gameGrid (isPlaying)="getGameStatus($event)"></app-grid>
+    <app-grid #gameGrid (isPlaying)="setGameStatus($event)"></app-grid>
   </div>
 </div>

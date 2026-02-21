@@ -11,8 +11,5 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
     ]
 })
 export class FooterComponent {
-
-  today = new Date();
-  currentYear = this.today.getFullYear();
-
+  protected currentYear = new Date().getFullYear();
 }

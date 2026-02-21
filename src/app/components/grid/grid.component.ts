@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter, OnDestroy } from '@angular/core';
 import { NgClass } from '@angular/common';
+import { GRID_BUTTONS, GRID_DIMENSIONS, REPRODUCTION_TIME } from './grid-settings';
 
 @Component({
     selector: 'app-grid',
@@ -8,32 +9,46 @@ import { NgClass } from '@angular/common';
     imports: [NgClass]
 })
 export class GridComponent implements OnInit, OnDestroy {
-  @Output() isPlaying = new EventEmitter();
+  @Output() isPlaying = new EventEmitter<string>();
 
-  rows = 20;
-  cols = 50;
-  currentGeneration = new Array<number[]>(this.rows);
-  nextGeneration = new Array<number[]>(this.rows);
+  protected currentGeneration = new Array<number[]>(GRID_DIMENSIONS.rows);
+  protected nextGeneration = new Array<number[]>(GRID_DIMENSIONS.rows);
 
-  playing = false;
-  timer;
-  reproductionTime = 100;
+  private playing = false;
+  private timer;
 
   ngOnInit() {
     this.initializeGrid();
     this.setupCells();
   }
 
-  initializeGrid = () => {
-    for (let i = 0; i < this.rows; i++) {
-      this.currentGeneration[i] = new Array(this.cols);
-      this.nextGeneration[i] = new Array(this.cols);
+  ngOnDestroy() {
+    this.pause();
+  }
+
+  reset(): void {
+    this.pause();
+    this.setupCells();
+  }
+
+  toggleGame(): void {
+    if (this.playing) {
+      this.pause();
+    } else {
+      this.play();
     }
   }
 
-  setupCells = () => {
-    for (let i = 0; i < this.rows; i++) {
-      for (let j = 0; j < this.cols; j++) {
+  private initializeGrid(): void {
+    for (let i = 0; i < GRID_DIMENSIONS.rows; i++) {
+      this.currentGeneration[i] = new Array(GRID_DIMENSIONS.cols);
+      this.nextGeneration[i] = new Array(GRID_DIMENSIONS.cols);
+    }
+  }
+
+  private setupCells(): void {
+    for (let i = 0; i < GRID_DIMENSIONS.rows; i++) {
+      for (let j = 0; j < GRID_DIMENSIONS.cols; j++) {
         const isAlive = Math.round(Math.random());
         if (isAlive === 1) {
           this.currentGeneration[i][j] = 1;
@@ -44,7 +59,7 @@ export class GridComponent implements OnInit, OnDestroy {
     }
   }
 
-  countAliveNeighbours = (row: number, col: number) => {
+  private countAliveNeighbours(row: number, col: number): number {
     let count = 0;
 
     // check neighbour above current cell
@@ -52,25 +67,25 @@ export class GridComponent implements OnInit, OnDestroy {
       count++;
     }
     // check neighbour on top right of current cell
-    if (row - 1 >= 0 && col + 1 < this.cols
+    if (row - 1 >= 0 && col + 1 < GRID_DIMENSIONS.cols
       && this.currentGeneration[row - 1][col + 1] === 1) {
       count++;
     }
     // check neighbour on right of current cell
-    if (col + 1 < this.cols && this.currentGeneration[row][col + 1] === 1) {
+    if (col + 1 < GRID_DIMENSIONS.cols && this.currentGeneration[row][col + 1] === 1) {
       count++;
     }
     // check neighbour on bottom right of current cell
-    if (row + 1 < this.rows && col + 1 < this.cols
+    if (row + 1 < GRID_DIMENSIONS.rows && col + 1 < GRID_DIMENSIONS.cols
       && this.currentGeneration[row + 1][col + 1] === 1) {
       count++;
     }
     // check neighbour below current cell
-    if (row + 1 < this.rows && this.currentGeneration[row + 1][col] === 1) {
+    if (row + 1 < GRID_DIMENSIONS.rows && this.currentGeneration[row + 1][col] === 1) {
       count++;
     }
     // check neighbour on bottom left of current cell
-    if (row + 1 < this.rows && col - 1 >= 0
+    if (row + 1 < GRID_DIMENSIONS.rows && col - 1 >= 0
       && this.currentGeneration[row + 1][col - 1] === 1) {
       count++;
     }
@@ -83,10 +98,11 @@ export class GridComponent implements OnInit, OnDestroy {
       && this.currentGeneration[row - 1][col - 1] === 1) {
       count++;
     }
+
     return count;
   }
 
-  applyRules = (row: number, col: number) => {
+  private applyRules(row: number, col: number): void {
     const aliveNeihgbours = this.countAliveNeighbours(row, col);
     const isAlive = this.currentGeneration[row][col] === 1;
     const isDead = this.currentGeneration[row][col] === 0;
@@ -104,52 +120,34 @@ export class GridComponent implements OnInit, OnDestroy {
     }
   }
 
-  replaceGenerationAndResetGrid = () => {
-    for (let i = 0; i < this.rows; i++) {
-      for (let j = 0; j < this.cols; j++) {
+  private replaceGenerationAndResetGrid(): void {
+    for (let i = 0; i < GRID_DIMENSIONS.rows; i++) {
+      for (let j = 0; j < GRID_DIMENSIONS.cols; j++) {
         this.currentGeneration[i][j] = this.nextGeneration[i][j];
         this.nextGeneration[i][j] = 0;
       }
     }
   }
 
-  computeNextGeneration = () => {
-    for (let i = 0; i < this.rows; i++) {
-      for (let j = 0; j < this.cols; j++) {
+  private computeNextGeneration(): void {
+    for (let i = 0; i < GRID_DIMENSIONS.rows; i++) {
+      for (let j = 0; j < GRID_DIMENSIONS.cols; j++) {
         this.applyRules(i, j);
       }
     }
     this.replaceGenerationAndResetGrid();
   }
 
-  play = () => {
+  private play(): void {
     this.playing = true;
-    this.isPlaying.emit('Pause');
+    this.isPlaying.emit(GRID_BUTTONS.pause);
     this.computeNextGeneration();
-    this.timer = setTimeout(this.play, this.reproductionTime);
+    this.timer = setTimeout(() => this.play(), REPRODUCTION_TIME);
   }
 
-  pause = () => {
+  private pause(): void {
     this.playing = false;
-    this.isPlaying.emit('Start');
+    this.isPlaying.emit(GRID_BUTTONS.start);
     clearTimeout(this.timer);
   }
-
-  reset = () => {
-    this.pause();
-    this.setupCells();
-  }
-
-  toggleGame = () => {
-    if (this.playing) {
-      this.pause();
-    } else {
-      this.play();
-    }
-  }
-
-  ngOnDestroy() {
-    this.pause();
-  }
-
 }

@@ -4,17 +4,16 @@ import { RouterOutlet } from '@angular/router';
 import { FooterComponent } from './components/layout/footer/footer.component';
 
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.css'],
-    imports: [
-      HeaderComponent, 
-      RouterOutlet, 
-      FooterComponent,
-    ]
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
+  imports: [
+    HeaderComponent, 
+    RouterOutlet, 
+    FooterComponent,
+  ]
 })
 export class AppComponent {
-
+  // TODO: title should be protected but is currently used in tests
   title = 'Game of Life';
-
 }
