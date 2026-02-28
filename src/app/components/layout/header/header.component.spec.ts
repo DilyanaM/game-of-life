@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed,  } from '@angular/core/testing';
+import { RouterModule } from '@angular/router';
 
 import { HeaderComponent } from './header.component';
-import { RouterModule } from '@angular/router';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
@@ -22,7 +22,7 @@ describe('HeaderComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('it should create', () => {
     expect(component).toBeTruthy();
   });
 });

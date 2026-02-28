@@ -18,7 +18,7 @@ describe('RulesComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('it should create', () => {
     expect(component).toBeTruthy();
   });
 });

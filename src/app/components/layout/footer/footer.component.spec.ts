@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterModule } from '@angular/router';
 
 import { FooterComponent } from './footer.component';
-import { RouterModule } from '@angular/router';
 
 describe('FooterComponent', () => {
   let component: FooterComponent;
@@ -22,7 +22,7 @@ describe('FooterComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('it should create', () => {
     expect(component).toBeTruthy();
   });
 });

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
+
 import { GRID_DIMENSIONS } from '../../models/grid/grid-settings';
 
 @Injectable()

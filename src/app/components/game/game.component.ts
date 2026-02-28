@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import { GridComponent } from '../grid/grid.component';
 import { GRID_BUTTONS } from '../../models/grid/grid-settings';
 

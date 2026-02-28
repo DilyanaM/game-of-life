@@ -3,7 +3,7 @@ import { NgClass } from '@angular/common';
 import { Subscription } from 'rxjs';
 
 import { GRID_BUTTONS, REPRODUCTION_TIME } from '../../models/grid/grid-settings';
-import { GridSetupService } from 'src/app/services/grid/grid-setup.service';
+import { GridSetupService } from '../../services/grid/grid-setup.service';
 
 @Component({
   selector: 'app-grid',

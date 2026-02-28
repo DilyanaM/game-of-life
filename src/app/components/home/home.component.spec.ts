@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home.component';
-import { RouterModule } from '@angular/router';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -22,7 +22,7 @@ describe('HomeComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('it should create', () => {
     expect(component).toBeTruthy();
   });
 });
