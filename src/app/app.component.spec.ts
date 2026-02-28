@@ -1,30 +1,43 @@
-import { TestBed, waitForAsync } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterModule } from '@angular/router';
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/layout/header/header.component';
 import { FooterComponent } from './components/layout/footer/footer.component';
 
 describe('AppComponent', () => {
-  beforeEach(waitForAsync(() => {
+  let fixture: ComponentFixture<AppComponent>;
+  let component: AppComponent;
+  let header: HTMLElement;
+  let footer: HTMLElement;
+  let routerOutlet: HTMLElement;
+
+  beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule,
+        AppComponent,
         HeaderComponent,
         FooterComponent,
-        AppComponent
+        RouterModule.forRoot([]),
       ],
     }).compileComponents();
-  }));
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app).toBeTruthy();
+    fixture = TestBed.createComponent(AppComponent);
+
+    component = fixture.debugElement.componentInstance;
+
+    header = document.querySelector('app-header');
+    footer = document.querySelector('app-footer');
+    routerOutlet = document.querySelector('router-outlet');
   });
 
-  it(`should have as title 'Game of Life'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('Game of Life');
+  it('it should create the app', () => {
+    expect(component).toBeTruthy();
+  });
+
+  it('it should render a header, a footer and a router outlet', () => {
+    expect(header).toBeTruthy();
+    expect(footer).toBeTruthy();
+    expect(routerOutlet).toBeTruthy();
   });
 });
