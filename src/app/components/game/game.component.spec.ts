@@ -15,7 +15,7 @@ describe('GameComponent', () => {
       imports: [
         GameComponent,
         GridComponent,
-      ]
+      ],
     }).compileComponents();
   });
 
