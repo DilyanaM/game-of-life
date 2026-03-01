@@ -1,4 +1,3 @@
-// @ts-check
 const eslint = require('@eslint/js');
 const { defineConfig } = require('eslint/config');
 const tseslint = require('typescript-eslint');
@@ -29,6 +28,13 @@ module.exports = defineConfig([
           type: 'element',
           prefix: 'app',
           style: 'kebab-case',
+        },
+      ],
+      'sort-imports': [
+        'error',
+        {
+          ignoreCase: true,
+          ignoreDeclarationSort: true,
         },
       ],
     },

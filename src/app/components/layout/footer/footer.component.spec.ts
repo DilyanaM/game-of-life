@@ -12,7 +12,7 @@ describe('FooterComponent', () => {
       imports: [
         FooterComponent,
         RouterModule.forRoot([]),
-      ]
+      ],
     }).compileComponents();
   });
 

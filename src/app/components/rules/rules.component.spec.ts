@@ -8,7 +8,9 @@ describe('RulesComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [RulesComponent]
+      imports: [
+        RulesComponent,
+      ],
     }).compileComponents();
   });
 

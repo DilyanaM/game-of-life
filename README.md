@@ -14,6 +14,10 @@ npm install
 
 ## Run the project
 ```
+npm start
+```
+or
+```
 ng serve -o
 ```
 This will run the dev server and open the app at [http://localhost:4200](http://localhost:4200) in the browser.
@@ -21,7 +25,16 @@ This will run the dev server and open the app at [http://localhost:4200](http://
 ## Build the project
 The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 ```
+npm run build
+```
+or
+```
 ng build
+```
+
+## Run unit tests
+```
+npm run test
 ```
 
 ## Run the production build

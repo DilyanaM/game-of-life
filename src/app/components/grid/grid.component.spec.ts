@@ -8,7 +8,9 @@ describe('GridComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [GridComponent]
+      imports: [
+        GridComponent,
+      ],
     }).compileComponents();
   });
 
