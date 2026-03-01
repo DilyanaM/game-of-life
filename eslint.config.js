@@ -30,6 +30,13 @@ module.exports = defineConfig([
           style: 'kebab-case',
         },
       ],
+      'sort-imports': [
+        'error',
+        {
+          ignoreCase: true,
+          ignoreDeclarationSort: true,
+        },
+      ],
     },
   },
   {
